@@ -1,0 +1,6 @@
+@use "../abstract/variables" as v;
+
+.tag {
+  font-family: v.$family-secondary;
+  color: v.$orange;
+}

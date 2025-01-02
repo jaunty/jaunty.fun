@@ -1,0 +1,110 @@
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 100%;
+  font-weight: normal;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+html {
+  background-color: hsl(221, 14%, 96%);
+  font-size: 1em;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  font-family: "Comic Neue";
+  color: hsl(221, 14%, 29%);
+  font-size: 1em;
+  line-height: 1.5;
+  min-width: 100%;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section {
+  display: block;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.25rem;
+}
+
+a {
+  color: hsl(233, 100%, 63%);
+}
+a:hover {
+  color: hsl(233, 100%, 53.55%);
+}
+
+@font-face {
+  font-family: "Comic Neue";
+  src: url("/static/font/COMIC_NEUE.ttf");
+}
+@font-face {
+  font-family: "Hey Fun";
+  src: url("/static/font/HEY_FUN.ttf");
+}
+.tag {
+  font-family: "Hey Fun";
+  color: hsl(15, 88%, 63%);
+}
+
+#grid {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-rows: 100%;
+  grid-template-columns: repeat(3, 33.33%);
+}

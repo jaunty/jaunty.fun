@@ -1,0 +1,5 @@
+@use "variables" as v;
+
+@function font($name) {
+  @return url("#{v.$static-url}/font/#{$name}.ttf");
+}

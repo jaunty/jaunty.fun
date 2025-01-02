@@ -1,0 +1,12 @@
+@use "../abstract/variables" as v;
+@use "../abstract/functions";
+
+@font-face {
+  font-family: v.$family-primary;
+  src: functions.font("COMIC_NEUE");
+}
+
+@font-face {
+  font-family: v.$family-secondary;
+  src: functions.font("HEY_FUN");
+}

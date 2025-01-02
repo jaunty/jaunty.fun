@@ -1,0 +1,40 @@
+@use "sass:color";
+@use "../abstract/variables" as v;
+
+#main {
+  grid-row: 1 / 2;
+  grid-column: 2 / 3;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: v.$size-2;
+}
+
+#info {
+  text-align: center;
+}
+
+#buttons {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.button {
+  color: v.$grey-lightest;
+  background-color: v.$orange;
+  padding: v.$size-1;
+  border-radius: v.$radius-small;
+
+  text-decoration: none;
+
+  &:hover {
+    color: color.scale(v.$background, $lightness: -10%);
+    background-color: color.scale(v.$orange, $lightness: -10%);
+    cursor: pointer;
+  }
+}

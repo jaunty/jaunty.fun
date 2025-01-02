@@ -1,0 +1,17 @@
+version: '3'
+
+interval: 500ms
+
+tasks:
+  sass:compile:
+    desc: transpile Sass to CSS
+    watch: true
+    preconditions:
+      - sh: command -v sass 2>&1 > /dev/null
+        msg: sass not installed
+    sources:
+      - style/*/**/*.scss
+      - style/main.scss
+    cmds:
+      - fish scripts/compile-styles.fish
+

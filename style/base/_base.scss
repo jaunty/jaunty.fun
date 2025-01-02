@@ -1,0 +1,48 @@
+@use "sass:color";
+@use "../abstract/variables" as v;
+
+html {
+  background-color: v.$background;
+  font-size: 1em;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body {
+  font-family: v.$family-primary;
+  color: v.$foreground;
+  font-size: 1em;
+  line-height: 1.5;
+  min-width: 100%;
+}
+
+html, body {
+  width: 100vw;
+  height: 100vh;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section {
+  display: block;
+}
+
+h1 {
+  font-size: v.$size-7;
+}
+
+p {
+  font-size: v.$size-medium;
+}
+
+a {
+  color: v.$blue;
+
+  &:hover {
+    color: color.scale(v.$blue, $lightness: -15%);
+  }
+}
