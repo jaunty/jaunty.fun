@@ -8,26 +8,6 @@
   gap: 1rem;
 }
 
-#info {
+#main-info {
   text-align: center;
-}
-
-#buttons {
-  width: 50%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-}
-
-.button {
-  color: hsl(221, 14%, 93%);
-  background-color: hsl(15, 88%, 63%);
-  padding: 0.75rem;
-  border-radius: 0.25rem;
-  text-decoration: none;
-}
-.button:hover {
-  color: hsl(221, 14%, 86.4%);
-  background-color: hsl(15, 88%, 56.7%);
-  cursor: pointer;
 }

@@ -1,0 +1,29 @@
+{{$year := placeholder "http.request.orig_uri.path.file"}}
+{{$galleryPath := printf "/static/image/gallery/%s" $year}}
+{{if not (fileExists $galleryPath)}}
+	{{httpError 404}}
+{{end}}
+{{$gallery := listFiles $galleryPath}}
+
+{{$title := printf "%s screenshots" $year}}
+{{$description := printf "Screenshots from Jaunty %s" $year}}
+{{$content := "title" $title "description" $description "gallery" $gallery}}
+
+{{import "/include/page.html"}}
+
+{{define "page-head"}}
+	{{include "/include/head.html" .title .description}}
+{{end}}
+
+{{define "page-body"}}
+	<nav id="navbar">
+		<div id="navbar-links">
+			<a class="navbar-link" href="/downloads">
+
+		</a>
+		</div>
+	</nav>
+	<main id="main">
+		
+	</main>
+{{end}}
