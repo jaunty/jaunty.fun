@@ -1,17 +1,28 @@
-{{$title := "Jaunty"}}
-{{$description := "Website for Jaunty, an annual Minecraft get-together"}}
+{{$title := index .Args 0}}
+{{$description := default "Website for Jaunty, an annual Minecraft get-together" (index .Args 1)}}
+
+{{if eq (len $title) 0}}
+	{{$title = "Jaunty!"}}
+{{else}}
+	{{$title = printf "%s &mdash; Jaunty!" $title}}
+{{end}}
+
+<!-- Basic metadata -->
 <meta charset="utf-8">
 <meta name="author" content="holedaemon">
 <meta name="description" content="{{$description}}">
 
+<!-- Responsive viewport -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- OpenGraph metadata -->
 <meta property="og:title" content="{{$title}}">
 <meta property="og:description" content="{{$description}}">
 <meta property="og:url" content="https://{{.Req.Host}}{{.OriginalReq.URL}}">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="{{$title}}">
 
+<!-- Twitter metadata -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{{$title}}">
 <meta name="twitter:description" content="{{$description}}">
@@ -19,4 +30,10 @@
 
 <title>{{$title}}</title>
 
+<!-- Our global stylesheet -->
 <link rel="stylesheet" href="/static/css/index.css">
+
+<!-- FontAwesome stylesheets for icons -->
+<link rel="stylesheet" href="/static/css/icons/fontawesome.css">
+<link rel="stylesheet" href="/static/css/icons/brands.css">
+<link rel="stylesheet" href="/static/css/icons/solid.css">

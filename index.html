@@ -1,34 +1,34 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		{{include "/include/head.html"}}
-		<link rel="stylesheet" href="/static/css/pages/index.css">
-		<link rel="stylesheet" href="/static/css/icons/fontawesome.css">
-		<link rel="stylesheet" href="/static/css/icons/brands.css">
-		<link rel="stylesheet" href="/static/css/icons/solid.css">
-	</head>
-	<body>
-		<div id="grid">
-			<main id="main">
-				<div id="info">
-					<h1>Welcome to <span class="tag">Jaunty</span>!</h1>
-					<p><span class="tag">Jaunty</span> is an annual event hosted by <a href="https://holedaemon.net" target="_blank">holedaemon</a>. Each year, we gather and play the latest release of Minecraft for a month. When that month is up, the server is taken down and the world download is hosted on this site.</p>
-				</div>
-				<div id="buttons">
-					<a class="button" href="/downloads">
-						<i class="fa-solid fa-folder"></i>
-						Downloads
-					</a>
-					<a class="button" href="/discord">
-						<i class="fa-brands fa-discord"></i>
-						Play
-					</a>
-					<a class="button" href="/gallery">
-						<i class="fa-solid fa-camera"></i>
-						Gallery
-					</a>
-				</div>
-			</main>
+{{$description := "Home page for Jaunty, an annual Minecraft event"}}
+{{$content := dict "description" $description}}
+
+{{import "/include/page.html"}}
+
+{{define "page-head"}}
+	{{include "/include/head.html" "" .description}}
+{{end}}
+
+{{define "page-body"}}
+	<main id="main">
+		<article id="main-content">
+			<h1>Welcome to <span class="tag">Jaunty</span>!</h1>
+			<p><span class="tag">Jaunty</span> is an annual get-together hosted by <a href="https://holedaemon.net" target="_blank">holedaemon</a>. Every January, folks from various communities gather to play the latest release of Minecraft.
+			After a month, the server is taken down and the world is provided as a download. Wanna play with us? Click the join button below!</p>
+		</article>
+		<div class="buttons">
+			<a class="button" href="/downloads">
+				<i class="fa-solid fa-folder"></i>
+				Downloads
+			</a>
+			<a class="button" href="/join">
+				<i class="fa-brands fa-discord"></i>
+				Join
+			</a>
+			<a class="button" href="/gallery">
+				<i class="fa-solid fa-camera"></i>
+				Gallery
+			</a>
 		</div>
-	</body>
-</html>
+	</main>
+{{end}}
+
+{{template "page" $content}}

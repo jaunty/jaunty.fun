@@ -5,5 +5,9 @@
 @use "base/font";
 @use "base/helpers";
 
+@use "component/button";
+@use "component/modal";
+
 @use "layout/grid";
+@use "layout/main";
 

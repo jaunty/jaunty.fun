@@ -1,0 +1,25 @@
+#galleries {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.gallery {
+  width: 25%;
+  height: auto;
+  font-size: 2.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: hsl(221, 14%, 96%);
+  background-color: hsl(15, 88%, 63%);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+}
+.gallery:hover {
+  color: hsl(221, 14%, 86.4%);
+  background-color: hsl(15, 88%, 56.7%);
+  cursor: pointer;
+}

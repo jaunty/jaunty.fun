@@ -1,0 +1,37 @@
+@use "../abstract/variables" as v;
+
+.modal {
+  width: 100vw;
+  height: 100vh;
+
+  position: absolute;
+  z-index: 1;
+
+  background-color: v.$background;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: v.$size-2;
+}
+
+.modal-loader {
+  border: 4px solid v.$grey-light;
+  border-top: 4px solid v.$orange;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

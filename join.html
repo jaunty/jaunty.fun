@@ -1,0 +1,46 @@
+{{$title := "Out of Season"}}
+{{$description := "Uh oh! Looks like Jaunty is closed 'til next year"}}
+{{$content := dict "title" $title "description" $description}}
+
+{{import "/include/page.html"}}
+
+{{define "page-head"}}
+	{{include "/include/head.html" .title .description}}
+	<link rel="stylesheet" href="/static/css/pages/closed.css">
+{{end}}
+
+{{define "page-body"}}
+	<section id="modal" class="modal">
+		<article class="modal-content">
+			<span class="modal-loader"></span>
+			<h1>Hold up a sec...</h1>
+		</article>
+	</section>
+	<main id="main">
+		<article id="main-content">
+			<h1 id="main-header">Damn...</h1>
+			<p id="main-text">If you're seeing this, it's too late.</p>
+		</article>
+		<div class="buttons">
+			<a class="button" href="/downloads">
+				<i class="fa-solid fa-folder"></i>
+				Downloads
+			</a>
+			<a class="button" href="/">
+				<i class="fa-solid fa-house"></i>
+				Home
+			</a>
+			<a class="button" href="/gallery">
+				<i class="fa-solid fa-camera"></i>
+				Gallery
+			</a>
+		</div>
+	</main>
+{{end}}
+
+{{define "page-script"}}
+	<script>const slug = '{{env "DISCORD_SLUG"}}';</script>
+	<script src="/static/js/join.js"></script>
+{{end}}
+
+{{template "page" $content}}
