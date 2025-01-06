@@ -1,0 +1,23 @@
+@use "../abstract/variables" as v;
+
+.screenshot {
+  width: 250px;
+  height: auto;
+}
+
+#main {
+  overflow-y: scroll;
+  margin: v.$size-2 v.$size-2 0 v.$size-2;
+}
+
+#main-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: v.$size-2;
+
+  height: 100%;
+  width: 80%;
+}

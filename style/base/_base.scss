@@ -1,4 +1,3 @@
-@use "sass:color";
 @use "../abstract/variables" as v;
 
 html {
@@ -40,9 +39,9 @@ p {
 }
 
 a {
-  color: v.$blue;
+  color: v.$link;
 
   &:hover {
-    color: color.scale(v.$blue, $lightness: -15%);
+    color: v.$link-hover;
   }
 }

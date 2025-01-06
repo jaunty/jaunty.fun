@@ -6,7 +6,6 @@
 
 {{define "page-head"}}
 	{{include "/include/head.html" .title .description}}
-	<link rel="stylesheet" href="/static/css/pages/closed.css">
 {{end}}
 
 {{define "page-body"}}
@@ -16,31 +15,18 @@
 			<h1>Hold up a sec...</h1>
 		</article>
 	</section>
+	{{include "/include/navbar.html"}}
 	<main id="main">
 		<article id="main-content">
 			<h1 id="main-header">Damn...</h1>
 			<p id="main-text">If you're seeing this, it's too late.</p>
 		</article>
-		<div class="buttons">
-			<a class="button" href="/downloads">
-				<i class="fa-solid fa-folder"></i>
-				Downloads
-			</a>
-			<a class="button" href="/">
-				<i class="fa-solid fa-house"></i>
-				Home
-			</a>
-			<a class="button" href="/gallery">
-				<i class="fa-solid fa-camera"></i>
-				Gallery
-			</a>
-		</div>
 	</main>
 {{end}}
 
 {{define "page-script"}}
 	<script>const slug = '{{env "DISCORD_SLUG"}}';</script>
-	<script src="/static/js/join.js"></script>
+	<script src="/static/js/play.js"></script>
 {{end}}
 
 {{template "page" $content}}

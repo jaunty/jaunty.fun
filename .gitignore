@@ -1,3 +1,4 @@
 Caddyfile
 .task
-
+scripts/images
+downloads/

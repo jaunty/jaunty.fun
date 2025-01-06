@@ -1,3 +1,5 @@
+@use "sass:color";
+
 $black: hsl(221, 14%, 4%);
 $black-bis: hsl(221, 14%, 9%);
 $black-ter: hsl(221, 14%, 14%);
@@ -13,11 +15,19 @@ $white: hsl(221, 14%, 100%);
 $white-bis: hsl(221, 14%, 98%);
 $white-ter: hsl(221, 14%, 96%);
 
-$orange: hsl(15, 88%, 63%);
+$orange: hsl(28, 100%, 50%);
 $blue: hsl(233, 100%, 63%);
 
+$primary: $orange;
+$primary-hover: color.scale($primary, $lightness: -15%);
+
+$link: $blue;
+$link-hover: color.scale($link, $lightness: -15%);
+
 $foreground: $grey-dark;
+
 $background: $white-ter;
+$background-hover: color.scale($background, $lightness: -15%);
 
 $size-1: 0.75rem;
 $size-2: 1rem;

@@ -1,0 +1,25 @@
+{{$path := placeholder "{http.request.uri.path.file}"}}
+<nav id="navbar">
+	<div id="navbar-links">
+		<a class="navbar-link" href="/downloads">
+			<i class="fa-solid fa-folder"></i>
+			Downloads
+		</a>
+		{{- if ne $path "/" -}}
+			<a class="navbar-link" href="/">
+				<i class="fa-solid fa-house"></i>
+				Home
+			</a>
+		{{- end -}}
+		{{- if ne $path "/play" -}}
+			<a class="navbar-link" href="/play">
+				<i class="fa-brands fa-discord"></i>
+				Play
+			</a>
+		{{- end -}}
+		<a class="navbar-link" href="/screenshots">
+			<i class="fa-solid fa-camera"></i>
+			Screenshots
+		</a>
+	</div>
+</nav>

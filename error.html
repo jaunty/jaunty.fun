@@ -1,0 +1,29 @@
+{{$description := "Home page for Jaunty, an annual Minecraft get-together"}}
+
+{{$content := dict "description" $description}}
+
+{{import "/include/page.html"}}
+
+{{define "page-head"}}
+	{{include "/include/head.html" "Uh oh" .description}}
+{{end}}
+
+{{define "page-body"}}
+	{{include "/include/navbar.html"}}
+	{{$code := placeholder "http.error.status_code"}}
+	{{$text := placeholder "http.error.status_text"}}
+	<main id="main">
+		<article id="main-content">
+			<h1>{{$text}}</h1>
+			{{if eq $code "500"}}
+				<p>EVERYBODY PANIC!!1!</p>
+			{{else if eq $code "404"}}
+				<p>I know this place like the back of my hand... That's new</p>
+			{{else}}
+				<p>Unknown error</p>
+			{{end}}
+		</article>
+	</main>
+{{end}}
+
+{{template "page" $content}}

@@ -1,0 +1,35 @@
+@use "../abstract/variables" as v;
+
+#navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: v.$primary;
+}
+
+#navbar-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: v.$size-2;
+}
+
+.navbar-link {
+  font-size: v.$size-medium;
+
+  color: v.$background;
+  text-decoration: none;
+
+  padding: v.$size-1;
+
+  &:hover {
+    background-color: v.$primary-hover;
+    color: v.$background-hover;
+  }
+}

@@ -1,0 +1,30 @@
+@use "../abstract/variables" as v;
+
+#screenshots {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 33%;
+
+  gap: v.$size-1;
+}
+
+.screenshot-link {
+  width: 80px;
+
+  color: v.$background;
+  background-color: v.$primary;
+
+  text-decoration: none;
+  font-size: v.$size-large;
+
+  padding: v.$size-2;
+  border-radius: v.$radius-small;
+
+  &:hover {
+    color: v.$background-hover;
+    background-color: v.$primary-hover;
+  }
+}

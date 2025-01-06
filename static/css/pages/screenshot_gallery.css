@@ -1,0 +1,20 @@
+.screenshot {
+  width: 250px;
+  height: auto;
+}
+
+#main {
+  overflow-y: scroll;
+  margin: 1rem 1rem 0 1rem;
+}
+
+#main-content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  height: 100%;
+  width: 80%;
+}

@@ -14,12 +14,12 @@
   text-align: center;
   text-decoration: none;
   color: hsl(221, 14%, 96%);
-  background-color: hsl(15, 88%, 63%);
+  background-color: hsl(28, 100%, 50%);
   padding: 0.75rem;
   border-radius: 0.25rem;
 }
 .gallery:hover {
   color: hsl(221, 14%, 86.4%);
-  background-color: hsl(15, 88%, 56.7%);
+  background-color: hsl(28, 100%, 45%);
   cursor: pointer;
 }

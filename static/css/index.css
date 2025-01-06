@@ -98,7 +98,7 @@ a:hover {
 }
 .tag {
   font-family: "Hey Fun";
-  color: hsl(15, 88%, 63%);
+  color: hsl(28, 100%, 50%);
 }
 
 .hidden {
@@ -114,14 +114,14 @@ a:hover {
 
 .button {
   color: hsl(221, 14%, 93%);
-  background-color: hsl(15, 88%, 63%);
+  background-color: hsl(28, 100%, 50%);
   padding: 0.75rem;
   border-radius: 0.25rem;
   text-decoration: none;
 }
 .button:hover {
   color: hsl(221, 14%, 86.4%);
-  background-color: hsl(15, 88%, 56.7%);
+  background-color: hsl(28, 100%, 45%);
   cursor: pointer;
 }
 
@@ -146,7 +146,7 @@ a:hover {
 
 .modal-loader {
   border: 4px solid hsl(221, 14%, 71%);
-  border-top: 4px solid hsl(15, 88%, 63%);
+  border-top: 4px solid hsl(28, 100%, 50%);
   border-radius: 50%;
   width: 50px;
   height: 50px;
@@ -161,17 +161,46 @@ a:hover {
     transform: rotate(360deg);
   }
 }
+#navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: hsl(28, 100%, 50%);
+}
+
+#navbar-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.navbar-link {
+  font-size: 1.25rem;
+  color: hsl(221, 14%, 96%);
+  text-decoration: none;
+  padding: 0.75rem;
+}
+.navbar-link:hover {
+  background-color: hsl(28, 100%, 42.5%);
+  color: hsl(221, 14%, 81.6%);
+}
+
 #grid {
   display: grid;
   width: 100%;
   height: 100%;
-  grid-template-rows: 100%;
-  grid-template-columns: repeat(3, 33.33%);
+  grid-template-rows: max-content auto;
+  grid-template-columns: auto;
 }
 
 #main {
-  grid-row: 1/2;
-  grid-column: 2/3;
+  grid-row: 2/3;
+  grid-column: 1/2;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -183,5 +212,6 @@ a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 33%;
   text-align: center;
 }
