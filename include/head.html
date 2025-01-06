@@ -1,5 +1,5 @@
-{{$title := index .Args 0}}
-{{$description := default "Website for Jaunty, an annual Minecraft get-together" (index .Args 1)}}
+{{$title := default "" (index .Args 0)}}
+{{$description := default "Homepage for Jaunty, an annual Minecraft get-together" (index .Args 1)}}
 
 {{if eq (len $title) 0}}
 	{{$title = "Jaunty!"}}
@@ -20,7 +20,7 @@
 <meta property="og:description" content="{{$description}}">
 <meta property="og:url" content="https://{{.Req.Host}}{{.OriginalReq.URL}}">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="{{$title}}">
+<meta property="og:site_name" content="Jaunty">
 
 <!-- Twitter metadata -->
 <meta name="twitter:card" content="summary">
@@ -29,6 +29,14 @@
 <meta name="twitter:creator" content="@holedaemon">
 
 <title>{{$title}}</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="/static/favicon/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/svg+xml" href="/static/favicon/favicon.svg">
+<link rel="shortcut icon" href="/static/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-title" content="Jaunty">
+<link rel="manifest" href="/static/favicon/site.webmanifest">
 
 <!-- Our global stylesheet -->
 <link rel="stylesheet" href="/static/css/index.css">

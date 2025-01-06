@@ -1,21 +1,13 @@
-{{$description := "Home page for Jaunty, an annual Minecraft get-together"}}
-{{$content := dict "description" $description}}
-
 {{import "/include/page.html"}}
 
-{{define "page-head"}}
-	{{include "/include/head.html" "" .description}}
-{{end}}
-
 {{define "page-body"}}
-	{{include "/include/navbar.html"}}
 	<main id="main">
-		<article id="main-content">
-			<h1>Welcome to <span class="tag">Jaunty</span>!</h1>
-			<p><span class="tag">Jaunty</span> is an annual get-together hosted by <a href="https://holedaemon.net" target="_blank">holedaemon</a>. Every January, folks from various communities gather to play the latest release of Minecraft.
+		<section id="main-content">
+			<h1 class="title">Welcome to <span class="tag">Jaunty</span>!</h1>
+			<p class="paragraph"><span class="tag">Jaunty</span> is an annual get-together hosted by <a href="https://holedaemon.net" target="_blank">holedaemon</a>. Every January, folks from various communities gather to play the latest release of Minecraft.
 			After a month, the server is taken down and the world is provided as a download. Click <a href="/play">here</a> to come play with us!</p>
-		</article>
+		</section>
 	</main>
 {{end}}
 
-{{template "page" $content}}
+{{template "page"}}

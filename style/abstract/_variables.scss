@@ -1,22 +1,22 @@
 @use "sass:color";
 
-$black: hsl(221, 14%, 4%);
-$black-bis: hsl(221, 14%, 9%);
-$black-ter: hsl(221, 14%, 14%);
+// Miscellaneous
+$static-url: "/static";
 
-$grey-light: hsl(221, 14%, 71%);
-$grey-lighter: hsl(221, 14%, 86%);
-$grey-lightest: hsl(221, 14%, 93%);
-$grey: hsl(221, 14%, 48%);
+// Initial colors
+$white: hsl(221, 14%, 96%);
+
+$grey: hsl(221, 14%, 71%);
 $grey-dark: hsl(221, 14%, 29%);
-$grey-darker: hsl(221, 14%, 21%);
-
-$white: hsl(221, 14%, 100%);
-$white-bis: hsl(221, 14%, 98%);
-$white-ter: hsl(221, 14%, 96%);
 
 $orange: hsl(28, 100%, 50%);
 $blue: hsl(233, 100%, 63%);
+
+// Derived colors
+$foreground: $grey-dark;
+
+$background: $white;
+$background-hover: color.scale($background, $lightness: -15%);
 
 $primary: $orange;
 $primary-hover: color.scale($primary, $lightness: -15%);
@@ -24,11 +24,14 @@ $primary-hover: color.scale($primary, $lightness: -15%);
 $link: $blue;
 $link-hover: color.scale($link, $lightness: -15%);
 
-$foreground: $grey-dark;
+// Fonts and typography
+$family-primary: "Comic Neue";
+$family-secondary: "Hey Fun";
 
-$background: $white-ter;
-$background-hover: color.scale($background, $lightness: -15%);
+$text-align: center;
+$text-decoration: none;
 
+// Sizing
 $size-1: 0.75rem;
 $size-2: 1rem;
 $size-3: 1.25rem;
@@ -37,59 +40,32 @@ $size-5: 2rem;
 $size-6: 2.5rem;
 $size-7: 3rem;
 
-$size-small: $size-1;
-$size-normal: $size-2;
-$size-medium: $size-3;
-$size-large: $size-4;
+// Derived sizing
+$space-small: $size-1;
+$space-normal: $size-2;
+$space-medium: $size-3;
+$space-large: $size-4;
 
-$radius-small: 0.25rem;
-$radius: 0.375rem;
-$radius-medium: 0.5em;
-$radius-large: 0.75rem;
-$radius-rounded: 9999px;
+$radius: 0.25rem;
 
-$family-primary: "Comic Neue";
-$family-secondary: "Hey Fun";
+// Flex
+$flex-wrap: wrap;
+$flex-alignment: center;
+$flex-gap: $space-normal;
 
+// Viewports
 $gap: 32px;
+
 $medium: 769px;
 $large: 960px + 2 * $gap;
-$larger: 1152px + 2 * $gap;
-$largest: 1344px + 2 * $gap;
-$breakpoints: (
-  "small": (
-    "until": $medium,
-  ),
-  "medium": (
-    "from": $medium,
-  ),
-  "medium-only": (
-    "from": $medium,
-    "until": $large,
-  ),
-  "large": (
-    "from": $large,
-  ),
-  "large-only": (
-    "from": $large,
-    "until": $larger,
-  ),
-  "until-larger": (
-    "until": $larger,
-  ),
-  "larger": (
-    "from": $larger,
-  ),
-  "larger-only": (
-    "from": $larger,
-    "until": $largest,
-  ),
-  "until-largest": (
-    "until": $largest,
-  ),
-  "largest": (
-    "from": $largest,
-  ),
-);
 
-$static-url: "/static";
+$width: 75%;
+$width-medium: 50%;
+
+$body-size: $size-2;
+$body-size-medium: $size-3;
+$body-size-large: $size-4;
+
+$header-size: $size-5;
+$header-size-medium: $size-6;
+$header-size-large: $size-7;

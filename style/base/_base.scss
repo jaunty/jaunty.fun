@@ -1,10 +1,13 @@
 @use "../abstract/variables" as v;
 
+$base-font-size: 1em;
+$base-overflow: hidden;
+
 html {
   background-color: v.$background;
-  font-size: 1em;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  font-size: $base-font-size;
+  overflow-x: $base-overflow;
+  overflow-y: $base-overflow;
 }
 
 body {
@@ -28,14 +31,6 @@ header,
 hgroup,
 section {
   display: block;
-}
-
-h1 {
-  font-size: v.$size-7;
-}
-
-p {
-  font-size: v.$size-medium;
 }
 
 a {

@@ -1,22 +1,25 @@
 @use "../abstract/variables" as v;
+@use "../abstract/mixins";
 
 #main {
   grid-row: 2 / 3;
   grid-column: 1 / 2;
 
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: v.$size-2;
+  @include mixins.flex-column;
+  @include mixins.flex-center;
+
+  gap: v.$flex-gap;
 }
 
 #main-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  width: v.$width;
 
-  width: 33%;
+  @include mixins.flex-column;
+  align-items: v.$flex-alignment;
 
-  text-align: center;
+  text-align: v.$text-align;
+
+  @include mixins.medium {
+    width: v.$width-medium;
+  }
 }

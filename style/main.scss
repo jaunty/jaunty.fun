@@ -5,9 +5,10 @@
 @use "base/font";
 @use "base/helpers";
 
-@use "component/button";
 @use "component/modal";
 @use "component/navbar";
+@use "component/title";
+@use "component/paragraph";
 
 @use "layout/grid";
 @use "layout/main";

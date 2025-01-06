@@ -1,0 +1,27 @@
+{{$title := "Out of season"}}
+{{$description := "Jaunty season is over, see you next year!"}}
+{{$header := "Out of Season :("}}
+{{$body := "Sorry, <span class=\"tag\">Jaunty</span> is closed for the season. Check back next January."}}
+
+{{$month := atoi (now | date "1")}}
+{{if eq $month 1}}
+	{{$title = "Check back soon"}}
+	{{$description = "Jaunty is almost here, check back soon!"}}
+	{{$header = "Check back soon!"}}
+	{{$body = "<span class=\"tag\">Jaunty</span> is coming up soon, check back in a few days!"}}
+{{end}}
+
+{{$content := dict "title" $title "description" $description "header" $header "body" $body}}
+
+{{import "/include/page.html"}}
+
+{{define "page-body"}}
+	<main id="main">
+		<section id="main-content">
+			<h1 class="title">{{.header}}</h1>
+			<p class="paragraph">{{.body}}</p>
+		</section>
+	</main>
+{{end}}
+
+{{template "page" $content}}

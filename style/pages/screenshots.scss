@@ -1,30 +1,44 @@
 @use "../abstract/variables" as v;
+@use "../abstract/mixins";
 
 #screenshots {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  width: v.$width;
 
-  width: 33%;
+  @include mixins.flex-row;
 
-  gap: v.$size-1;
+  flex-wrap: v.$flex-wrap;
+  justify-content: v.$flex-alignment;
+
+  gap: v.$space-small;
+
+  @include mixins.medium {
+    width: v.$width-medium;
+  }
 }
 
 .screenshot-link {
-  width: 80px;
+  width: max-content;
 
   color: v.$background;
   background-color: v.$primary;
 
-  text-decoration: none;
-  font-size: v.$size-large;
+  text-align: v.$text-align;
+  text-decoration: v.$text-decoration;
+  font-size: v.$header-size;
 
-  padding: v.$size-2;
-  border-radius: v.$radius-small;
+  border-radius: v.$radius;
+  padding: v.$space-small;
 
   &:hover {
     color: v.$background-hover;
     background-color: v.$primary-hover;
+  }
+
+  @include mixins.medium {
+    font-size: v.$header-size-medium;
+  }
+
+  @include mixins.large {
+    font-size: v.$header-size-large;
   }
 }

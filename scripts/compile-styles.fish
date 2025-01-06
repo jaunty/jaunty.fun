@@ -2,7 +2,7 @@ set base (pwd)
 set input $base/style
 set output $base/static/css
 
-set compressed 0
+set compressed 1
 set no_source_maps 1
 set no_embed_sources 1
 

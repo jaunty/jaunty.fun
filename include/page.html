@@ -6,10 +6,12 @@
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>
+		{{include "/include/head.html" .title .description}}
 		{{template "page-head" .}}
 	</head>
 	<body>
 		<div id="grid">
+			{{include "/include/navbar.html"}}
 			{{template "page-body" .}}
 		</div>
 		{{template "page-script" .}}

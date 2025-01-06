@@ -1,0 +1,14 @@
+@use "../abstract/variables" as v;
+@use "../abstract/mixins";
+
+.paragraph {
+  font-size: v.$body-size;
+
+  @include mixins.medium {
+    font-size: v.$body-size-medium;
+  }
+
+  @include mixins.large {
+    font-size: v.$body-size-large;
+  }
+}

@@ -18,12 +18,11 @@
 {{end}}
 
 {{define "page-body"}}
-	{{include "/include/navbar.html"}}
 	<main id="main">
 		<article id="main-content">
 			{{if eq (len .screenshots) 0}}
-				<h1>Nothing here</h1>
-				<p>No screenshots have been uploaded for this year, check back later.</p>
+				<h1 class="title">Nothing here</h1>
+				<p class="paragraph">No screenshots have been uploaded for this year, check back later.</p>
 			{{else}}
 				{{range $screenshot := .screenshots}}
 					{{$caption := $screenshot.caption | replace "\"" "'"}}

@@ -1,0 +1,11 @@
+{
+	"malva": {
+		"printWidth": 80,
+		"hexCase": "lower",
+		"hexColorLength": "short"
+	},
+	"excludes": [],
+	"plugins": [
+		"https://plugins.dprint.dev/g-plane/malva-v0.11.0.wasm",
+	]
+}
