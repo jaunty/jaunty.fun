@@ -1,0 +1,42 @@
+{{$downloadsFilePath := "/static/json/downloads.json"}}
+{{if not (fileExists $downloadsFilePath)}}
+	{{httpError 404}}
+{{end}}
+
+{{$title := "Downloads"}}
+{{$description := "Download the world file of previous Jaunty servers!"}}
+{{$downloads := include $downloadsFilePath | mustFromJson}}
+{{$content := dict "title" $title "description" $description "downloads" $downloads}}
+
+{{import "include/page.html"}}
+
+{{define "page-head"}}
+	<link rel="stylesheet" href="/static/css/pages/downloads.css">
+{{end}}
+
+{{define "page-body"}}
+	{{$header := "Check back later"}}
+	{{$text := "World files haven't been uploaded yet."}}
+
+	{{if gt (len .downloads) 0}}
+		{{$header = "Downloads"}}
+		{{$text = "Click a link to download the world save from that year."}}
+	{{end}}
+
+	<article id="main">
+		<section id="main-content">
+			<h1 class="title">{{$header}}</h1>
+			<p class="paragraph">{{$text}}</p>
+		</section>
+		{{if gt (len .downloads) 0}}
+			<section id="downloads">
+				{{range $download := .downloads}}
+					<a class="download-link" href="{{$download.url}}">{{$download.name}}</a>
+				{{end}}
+			</section>
+		{{end}}
+	</article>
+{{end}}
+
+{{template "page" $content}}
+
