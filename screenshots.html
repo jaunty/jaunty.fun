@@ -1,4 +1,4 @@
-{{$screenshotsPath := "/static/image/screenshot"}}
+{{$screenshotsPath := "/static/json/screenshot"}}
 {{$title := "Screenshots"}}
 {{$description := "Screenshots of Jaunty over the years!"}}
 
@@ -29,7 +29,8 @@
 		{{if gt (len $screenshots) 0}}
 			<article id="screenshots">
 				{{range $path := $screenshots}}
-					<a class="screenshot-link" href="/screenshots/{{$path}}">{{$path}}</a>
+					{{$screenshot := trimSuffix (osExt $path) (osBase $path)}}
+					<a class="screenshot-link" href="/screenshots/{{$screenshot}}">{{$screenshot}}</a>
 				{{end}}
 			</article>
 		{{end}}
