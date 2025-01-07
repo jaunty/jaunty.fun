@@ -1,7 +1,7 @@
 @use "../abstract/variables" as v;
 @use "../abstract/mixins";
 
-#screenshots {
+#list {
   width: v.$width;
 
   @include mixins.flex-row;
@@ -16,7 +16,7 @@
   }
 }
 
-.screenshot-link {
+.list-link {
   width: max-content;
 
   color: v.$background;

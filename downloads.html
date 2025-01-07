@@ -15,23 +15,23 @@
 {{end}}
 
 {{define "page-body"}}
-	{{$header := "Check back later"}}
-	{{$text := "World files haven't been uploaded yet."}}
+	{{$header := "World Saves"}}
+	{{$body := "Click below to download the world save from the respective year of Jaunty. Each download will be anywhere from 500MB to 2GB."}}
 
-	{{if gt (len .downloads) 0}}
-		{{$header = "Downloads"}}
-		{{$text = "Click a link to download the world save from that year."}}
+	{{if eq (len .downloads) 0}}
+		{{$header = "Nothing here"}}
+		{{$body = "Downloads haven't been provided yet, check back later."}}
 	{{end}}
 
 	<article id="main">
 		<section id="main-content">
 			<h1 class="title">{{$header}}</h1>
-			<p class="paragraph">{{$text}}</p>
+			<p class="paragraph">{{$body}}</p>
 		</section>
 		{{if gt (len .downloads) 0}}
-			<section id="downloads">
+			<section id="list">
 				{{range $download := .downloads}}
-					<a class="download-link" href="{{$download.url}}">{{$download.name}}</a>
+					<a class="list-link" href="{{$download.url}}">{{$download.name}}</a>
 				{{end}}
 			</section>
 		{{end}}

@@ -27,10 +27,10 @@
 			{{end}}
 		</article>
 		{{if gt (len $screenshots) 0}}
-			<article id="screenshots">
+			<article id="list">
 				{{range $path := $screenshots}}
 					{{$screenshot := trimSuffix (osExt $path) (osBase $path)}}
-					<a class="screenshot-link" href="/screenshots/{{$screenshot}}">{{$screenshot}}</a>
+					<a class="list-link" href="/screenshots/{{$screenshot}}">{{$screenshot}}</a>
 				{{end}}
 			</article>
 		{{end}}
