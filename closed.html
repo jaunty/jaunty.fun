@@ -1,14 +1,23 @@
-{{$title := "Out of season"}}
-{{$description := "Jaunty season is over, see you next year!"}}
-{{$header := "Out of Season :("}}
-{{$body := "Sorry, <span class=\"tag\">Jaunty</span> is closed for the season. Check back next January."}}
+{{$year := atoi (now | date "2006")}}
+{{$month := atoi (now | date "01")}}
 
-{{$month := atoi (now | date "1")}}
+{{$title := "Closed for Season"}}
+{{$description := "Jaunty is closed for the season :("}}
+{{$header := "Closed for Season"}}
+{{$body := printf "Sorry, <span class=\"tag\">Jaunty</span> is closed for the season. Check back in January of %d!" (add $year 1)}}
+
 {{if eq $month 1}}
-	{{$title = "Check back soon"}}
-	{{$description = "Jaunty is almost here, check back soon!"}}
-	{{$header = "Check back soon!"}}
-	{{$body = "<span class=\"tag\">Jaunty</span> is coming up soon, check back in a few days!"}}
+	{{$title = "Coming Soon"}}
+	{{$description = "Jaunty is almost here!"}}
+	{{$header = "It's January...!"}}
+	{{$body = "If you're seeing this, that means things ain't ready just yet. Check back soon!"}}
+{{end}}
+
+{{if ne (env "DISCORD_CLOSED") ""}}
+	{{$title = "Max Capacity"}}
+	{{$description := "Jaunty is has reached max capacity!"}}
+	{{$header = "Damn..."}}
+	{{$body = "Sorry, <span class=\"tag\">Jaunty</span> is at max capacity, we're not accepting any additional players this year. :("}}
 {{end}}
 
 {{$content := dict "title" $title "description" $description "header" $header "body" $body}}
