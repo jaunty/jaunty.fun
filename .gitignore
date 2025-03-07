@@ -2,3 +2,4 @@ Caddyfile
 .task
 scripts/images
 downloads/
+static/css

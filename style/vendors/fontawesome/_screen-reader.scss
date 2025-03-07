@@ -1,0 +1,13 @@
+@use "variables";
+@use "mixins";
+
+.sr-only,
+.#{variables.$fa-css-prefix}-sr-only {
+  @include mixins.fa-sr-only;
+}
+
+// use in conjunction with .sr-only to only display content when it's focused
+.sr-only-focusable,
+.#{variables.$fa-css-prefix}-sr-only-focusable {
+  @include mixins.fa-sr-only-focusable;
+}

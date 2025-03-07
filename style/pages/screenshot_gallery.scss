@@ -1,5 +1,6 @@
 @use "../abstract/variables" as v;
 @use "../abstract/mixins";
+@use "../vendors/fancybox/fancybox.css";
 
 $margin: v.$space-normal;
 

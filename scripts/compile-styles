@@ -1,0 +1,14 @@
+#!/usr/bin/fish
+
+set base (pwd)
+set input $base/style
+set output $base/static/css
+
+sass $input/main.scss $output/index.css
+for file in $input/pages/*
+	set name (basename $file .scss)
+	set input_name (printf "%s.scss" $name)
+	set output_name (printf "%s.css" $name)
+	sass $input/pages/$input_name $output/pages/$output_name
+end
+

@@ -1,0 +1,11 @@
+# Ignore miscellaneous files
+Taskfile.yml
+dprint.json
+README.md
+LICENSE
+
+# Ignore directories
+/scripts
+/static/css
+/.git
+/.task
