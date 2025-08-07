@@ -1,0 +1,27 @@
+name: Build and Push Release
+
+run-name: Build Site and Push Release to GitHub
+
+on:
+  push:
+    tags:
+      - "v*.*.*"
+
+jobs:
+  build-release:
+    name: Build Site and Push Release to GitHub
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          path: site
+
+      - name: Build Site and Push Release to GitHub
+        uses: holedaemon/build-static-site-action@v0.2.1
+        with:
+          name: jaunty.fun
+          path: site
+          compile-typescript: false

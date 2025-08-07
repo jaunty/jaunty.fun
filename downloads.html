@@ -8,7 +8,7 @@
 {{$downloads := include $downloadsFilePath | mustFromJson}}
 {{$content := dict "title" $title "description" $description "downloads" $downloads}}
 
-{{import "include/page.html"}}
+{{import "/templates/_page.html"}}
 
 {{define "page-head"}}
 	<link rel="stylesheet" href="/static/css/pages/downloads.css">

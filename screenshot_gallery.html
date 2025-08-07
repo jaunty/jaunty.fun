@@ -9,10 +9,9 @@
 {{$screenshots := readFile $screenshotsFile | mustFromJson}}
 {{$content := dict "title" $title "description" $description "screenshots" $screenshots}}
 
-{{import "/include/page.html"}}
+{{import "/templates/_page.html"}}
 
 {{define "page-head"}}
-	{{include "/include/head.html" .title .description}}
 	<link rel="stylesheet" href="/static/css/pages/screenshot_gallery.css">
 	<link rel="stylesheet" href="/static/css/fancybox.css">
 {{end}}
