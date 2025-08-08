@@ -25,3 +25,4 @@ jobs:
           name: jaunty.fun
           path: site
           compile-typescript: false
+          compile-scss: true
