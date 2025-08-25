@@ -20,9 +20,9 @@ jobs:
           path: site
 
       - name: Build Site and Push Release to GitHub
-        uses: holedaemon/build-static-site-action@v0.2.1
+        uses: holedaemon/build-static-site-action@v0.3.0
         with:
           name: jaunty.fun
           path: site
-          compile-typescript: false
-          compile-scss: true
+          do_typescript: false
+          do_sass: true
