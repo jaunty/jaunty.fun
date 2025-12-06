@@ -3,25 +3,25 @@
 {{$content := dict "title" "Uh oh"}}
 
 {{define "page-body"}}
-	{{$code := placeholder "http.error.status_code"}}
-	{{$header := placeholder "http.error.status_text"}}
-	{{$body := ""}}
+{{$code := placeholder "http.error.status_code"}}
+{{$header := placeholder "http.error.status_text"}}
+{{$body := ""}}
 
-	{{if eq $code "500"}}
-		{{$body = "EVERYBODY PANIC!!1!"}}
-	{{else if eq $code "404"}}
-		{{$body = "I know this place like the back of my hand... That's new"}}
-	{{else}}
-		{{$header = "???"}}
-		{{$body = "Unknown error!!!"}}
-	{{end}}
+{{if eq $code "500"}}
+    {{$body = "EVERYBODY PANIC!!1!"}}
+{{else if eq $code "404"}}
+    {{$body = "I know this place like the back of my hand... That's new"}}
+{{else}}
+    {{$header = "???"}}
+    {{$body = "Unknown error!!!"}}
+{{end}}
 
-	<main id="main">
-		<section id="main-content">
-			<h1 class="title">{{$header}}</h1>
-			<p class="paragraph">{{$body}}</p>
-		</section>
-	</main>
+<main id="main">
+    <section id="main-content">
+        <h1 class="title">{{$header}}</h1>
+        <p class="paragraph">{{$body}}</p>
+    </section>
+</main>
 {{end}}
 
 {{template "page" $content}}

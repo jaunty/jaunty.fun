@@ -7,34 +7,34 @@
 {{import "/templates/_page.html"}}
 
 {{define "page-head"}}
-	<link rel="stylesheet" href="/static/css/pages/screenshots.css">
+<link rel="stylesheet" href="/static/css/pages/screenshots.css">
 {{end}}
 
 {{define "page-body"}}
-	{{$screenshots := list}}
-	{{if fileExists .screenshots}}
-		{{$screenshots = listFiles .screenshots}}
-	{{end}}
+{{$screenshots := list}}
+{{if fileExists .screenshots}}
+    {{$screenshots = listFiles .screenshots}}
+{{end}}
 
-	<main id="main">
-		<article id="main-content">
-			{{if eq (len $screenshots) 0}}
-				<h1 class="title">Nothing here</h1>
-				<p class="paragraph">No screenshots have been uploaded to the site yet, check back later.</p>
-			{{else}}
-				<h1 class="title">Screenshots</h1>
-				<p class="paragraph"><span class="tag">Jaunty</span> has been around for a while! Over the years, we've amassed a collection of screenshots from a number of the servers we've played on.</p>
-			{{end}}
-		</article>
-		{{if gt (len $screenshots) 0}}
-			<article id="list">
-				{{range $path := $screenshots}}
-					{{$screenshot := trimSuffix (osExt $path) (osBase $path)}}
-					<a class="list-link" href="/screenshots/{{$screenshot}}">{{$screenshot}}</a>
-				{{end}}
-			</article>
-		{{end}}
-	</main>
+<main id="main">
+    <article id="main-content">
+        {{if eq (len $screenshots) 0}}
+            <h1 class="title">Nothing here</h1>
+            <p class="paragraph">No screenshots have been uploaded to the site yet, check back later.</p>
+        {{else}}
+            <h1 class="title">Screenshots</h1>
+            <p class="paragraph"><span class="tag">Jaunty</span> has been around for a while! Over the years, we've amassed a collection of screenshots from a number of the servers we've played on.</p>
+        {{end}}
+    </article>
+    {{if gt (len $screenshots) 0}}
+        <article id="list">
+            {{range $path := $screenshots}}
+                {{$screenshot := trimSuffix (osExt $path) (osBase $path)}}
+                <a class="list-link" href="/screenshots/{{$screenshot}}">{{$screenshot}}</a>
+            {{end}}
+        </article>
+    {{end}}
+</main>
 {{end}}
 
 {{template "page" $content}}

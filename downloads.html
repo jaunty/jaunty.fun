@@ -11,31 +11,31 @@
 {{import "/templates/_page.html"}}
 
 {{define "page-head"}}
-	<link rel="stylesheet" href="/static/css/pages/downloads.css">
+<link rel="stylesheet" href="/static/css/pages/downloads.css">
 {{end}}
 
 {{define "page-body"}}
-	{{$header := "World Saves"}}
-	{{$body := "Click below to download the world save from the respective year of Jaunty."}}
+{{$header := "World Saves"}}
+{{$body := "Click below to download the world save from the respective year of Jaunty."}}
 
-	{{if eq (len .downloads) 0}}
-		{{$header = "Nothing here"}}
-		{{$body = "Downloads haven't been provided yet, check back later."}}
-	{{end}}
+{{if eq (len .downloads) 0}}
+    {{$header = "Nothing here"}}
+    {{$body = "Downloads haven't been provided yet, check back later."}}
+{{end}}
 
-	<article id="main">
-		<section id="main-content">
-			<h1 class="title">{{$header}}</h1>
-			<p class="paragraph">{{$body}}</p>
-		</section>
-		{{if gt (len .downloads) 0}}
-			<section id="list">
-				{{range $download := .downloads}}
-					<a class="list-link" href="{{$download.url}}">{{$download.name}}</a>
-				{{end}}
-			</section>
-		{{end}}
-	</article>
+<article id="main">
+    <section id="main-content">
+        <h1 class="title">{{$header}}</h1>
+        <p class="paragraph">{{$body}}</p>
+    </section>
+    {{if gt (len .downloads) 0}}
+        <section id="list">
+            {{range $download := .downloads}}
+                <a class="list-link" href="{{$download.url}}">{{$download.name}}</a>
+            {{end}}
+        </section>
+    {{end}}
+</article>
 {{end}}
 
 {{template "page" $content}}

@@ -1,8 +1,6 @@
 {{$year := placeholder "http.request.orig_uri.path.file"}}
 {{$screenshotsFile := printf "/static/json/screenshot/%s.json" $year}}
-{{if not (fileExists $screenshotsFile)}}
-	{{httpError 404}}
-{{end}}
+{{if not (fileExists $screenshotsFile)}}{{httpError 404}}{{end}}
 
 {{$title := printf "%s screenshots" $year}}
 {{$description := printf "Screenshots from Jaunty's %s server" $year}}
@@ -12,33 +10,33 @@
 {{import "/templates/_page.html"}}
 
 {{define "page-head"}}
-	<link rel="stylesheet" href="/static/css/pages/screenshot_gallery.css">
-	<link rel="stylesheet" href="/static/css/fancybox.css">
+<link rel="stylesheet" href="/static/css/pages/screenshot_gallery.css">
+<link rel="stylesheet" href="/static/css/fancybox.css">
 {{end}}
 
 {{define "page-body"}}
-	<main id="main">
-		<article id="main-content">
-			{{if eq (len .screenshots) 0}}
-				<h1 class="title">Nothing here</h1>
-				<p class="paragraph">No screenshots have been uploaded for this year, check back later.</p>
-			{{else}}
-				{{range $screenshot := .screenshots}}
-					{{$caption := $screenshot.caption | replace "\"" "'"}}
-					<a href="{{$screenshot.url}}" data-fancybox="gallery" {{if ne $caption ""}}data-caption="{{$caption}}"{{end}}>
-						<img class="screenshot" src="{{$screenshot.url}}">
-					</a>
-				{{end}}
-			{{end}}
-		</article>
-	</main>
+<main id="main">
+    <article id="main-content">
+        {{if eq (len .screenshots) 0}}
+            <h1 class="title">Nothing here</h1>
+            <p class="paragraph">No screenshots have been uploaded for this year, check back later.</p>
+        {{else}}
+            {{range $screenshot := .screenshots}}
+                {{$caption := $screenshot.caption | replace "\"" "'"}}
+                <a href="{{$screenshot.url}}" data-fancybox="gallery" {{if ne $caption ""}}data-caption="{{$caption}}"{{end}}>
+                    <img class="screenshot" src="{{$screenshot.url}}">
+                </a>
+            {{end}}
+        {{end}}
+    </article>
+</main>
 {{end}}
 
 {{define "page-script"}}
-	<script src="/static/js/fancybox.js"></script>
-	<script>
-		Fancybox.bind("[data-fancybox]", {});
-	</script>
+<script src="/static/js/fancybox.js"></script>
+<script>
+    Fancybox.bind("[data-fancybox]", {});
+</script>
 {{end}}
 
 {{template "page" $content}}

@@ -4,20 +4,20 @@
 {{$title := "Closed for Season"}}
 {{$description := "Jaunty is closed for the season :("}}
 {{$header := "Closed for Season"}}
-{{$body := printf "Sorry, <span class=\"tag\">Jaunty</span> is closed for the season. Check back in January of %d!" (add $year 1)}}
+{{$body := printf "Sorry, Jaunty is closed for the season. Check back in January of %d!" (add $year 1)}}
 
 {{if eq $month 1}}
-	{{$title = "Coming Soon"}}
-	{{$description = "Jaunty is almost here!"}}
-	{{$header = "It's January...!"}}
-	{{$body = "If you're seeing this, that means things ain't ready just yet. Check back soon!"}}
+{{$title = "Coming Soon"}}
+{{$description = "Jaunty is almost here!"}}
+{{$header = "It's January...!"}}
+{{$body = "If you're seeing this, that means things ain't ready just yet. Check back soon!"}}
 {{end}}
 
 {{if ne (env "DISCORD_CLOSED") ""}}
-	{{$title = "Max Capacity"}}
-	{{$description := "Jaunty is has reached max capacity!"}}
-	{{$header = "Damn..."}}
-	{{$body = "Sorry, <span class=\"tag\">Jaunty</span> is at max capacity, we're not accepting any additional players this year. :("}}
+{{$title = "Max Capacity"}}
+{{$description := "Jaunty is has reached max capacity!"}}
+{{$header = "Damn..."}}
+{{$body = "Sorry, Jaunty is at max capacity, we're not accepting any additional players this year. :("}}
 {{end}}
 
 {{$content := dict "title" $title "description" $description "header" $header "body" $body}}
@@ -25,12 +25,12 @@
 {{import "/templates/_page.html"}}
 
 {{define "page-body"}}
-	<main id="main">
-		<section id="main-content">
-			<h1 class="title">{{.header}}</h1>
-			<p class="paragraph">{{.body}}</p>
-		</section>
-	</main>
+<main id="main">
+    <section id="main-content">
+        <h1 class="title">{{.header}}</h1>
+        <p class="paragraph">{{.body}}</p>
+    </section>
+</main>
 {{end}}
 
 {{template "page" $content}}
