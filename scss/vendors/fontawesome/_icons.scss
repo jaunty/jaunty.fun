@@ -1,8 +1,11 @@
 @use "sass:string";
-@use "variables";
+@use "variables" as v;
 
-@each $name, $icon in variables.$fa-icons {
-  .#{variables.$fa-css-prefix}-#{$name} {
-    #{variables.$fa-icon-property}: string.unquote("\"#{$icon}\"");
+/* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
+   readers do not read off random characters that represent icons */
+
+@each $name, $icon in v.$icons {
+  .#{v.$css-prefix}-#{$name} {
+    #{v.$icon-property}: string.unquote("\"#{$icon}\"");
   }
 }

@@ -1,52 +1,24 @@
-@use "variables";
-@use "mixins";
+@use "variables" as v;
+@use "mixins" as m;
 
-.#{variables.$fa-css-prefix} {
-  font-family: var(
-    --#{variables.$fa-css-prefix}-style-family,
-    "#{variables.$fa-style-family}"
-  );
-  font-weight: var(--#{variables.$fa-css-prefix}-style, #{variables.$fa-style});
-}
-
+.#{v.$css-prefix}-solid,
+.#{v.$css-prefix}-regular,
+.#{v.$css-prefix}-brands,
+.#{v.$css-prefix}-classic,
 .fas,
 .far,
 .fab,
-.#{variables.$fa-css-prefix}-solid,
-.#{variables.$fa-css-prefix}-regular,
-.#{variables.$fa-css-prefix}-brands,
-.#{variables.$fa-css-prefix} {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  display: var(--#{variables.$fa-css-prefix}-display, #{variables.$fa-display});
-  font-style: normal;
-  font-variant: normal;
-  line-height: 1;
-  text-rendering: auto;
+.#{v.$css-prefix} {
+  @include m.fa-icon();
 }
 
-.fas::before,
-.far::before,
-.fab::before,
-.#{variables.$fa-css-prefix}-solid::before,
-.#{variables.$fa-css-prefix}-regular::before,
-.#{variables.$fa-css-prefix}-brands::before,
-.#{variables.$fa-css-prefix}::before {
-  content: var(#{variables.$fa-icon-property});
+:is(.fas, .far, .fab, .#{v.$css-prefix}-solid, .#{v.$css-prefix}-regular, .#{v.$css-prefix}-brands, .#{v.$css-prefix}-classic, .fa)::before {
+  content: var(#{v.$icon-property}) / "";
 }
 
-.#{variables.$fa-css-prefix}-classic,
-.fas,
-.#{variables.$fa-css-prefix}-solid,
-.far,
-.#{variables.$fa-css-prefix}-regular {
-  font-family: "Font Awesome 6 Free";
-}
-.#{variables.$fa-css-prefix}-brands,
-.fab {
-  font-family: "Font Awesome 6 Brands";
+@supports not (content: ""/"") {
+  :is(.fas, .far, .fab, .#{v.$css-prefix}-solid, .#{v.$css-prefix}-regular, .#{v.$css-prefix}-brands, .#{v.$css-prefix}-classic, .fa)::before {
+    content: var(#{v.$icon-property});
+  }
 }
 
-%fa-icon {
-  @include mixins.fa-icon;
-}
