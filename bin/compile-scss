@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+if [[ ! -e ".git" ]]; then
+    echo "$0: must be ran from root of project"
+    exit 1
+fi
+
+if ! command -v sass > /dev/null; then
+    echo "$0: sass not installed"
+    exit 127
+fi
+
+if [[ -e "$PWD/scss/main.scss" ]]; then
+    echo "$0: compiling $PWD/scss/main.scss to $PWD/static/css/index.css"
+    sass --update $PWD/scss/main.scss $PWD/static/css/index.css
+fi
+
+if [[ -d "$PWD/scss/pages" ]]; then
+    for page in $PWD/scss/pages/*.scss; do
+        page_name="$(basename $page .scss)"
+        echo "$0: compiling $page to $PWD/static/css/pages/$page_name.css"
+        sass --update $page $PWD/static/css/pages/$page_name.css
+    done
+fi
+
+# vim: ft=bash

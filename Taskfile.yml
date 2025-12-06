@@ -3,15 +3,13 @@ version: '3'
 interval: 500ms
 
 tasks:
-  sass:compile:
+  default:
     desc: transpile Sass to CSS
-    watch: true
-    preconditions:
-      - sh: command -v sass 2>&1 > /dev/null
-        msg: sass not installed
     sources:
-      - style/*/**/*.scss
-      - style/main.scss
+      - style/**/*.scss
+    generates:
+      - static/css/**/*.css
+      - static/css/**/*.css.map
     cmds:
-      - fish scripts/compile-styles.fish
-
+      - for: "sources"
+        cmd: ./bin/compile-scss {{.ITEM}}
